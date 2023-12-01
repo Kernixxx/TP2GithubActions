@@ -19,4 +19,16 @@ jobs:
       - name: Récupération code
         if: ${{ github.ref == 'refs/heads/main' }} 
         uses: actions/checkout@v4.1.1
+
+      - name: prod
+        run: echo "Environnement de production choisi"
+        if: ${{ github.event.inputs.server == 'prod' }} 
+
+      - name: qual
+        run: echo "Environnement de qualification choisi"
+        if: ${{ github.event.inputs.server == 'qual' }} 
+
+      - name: dev
+        run: echo "Environnement de développement choisi"
+        if: ${{ github.event.inputs.server == 'dev' }} 
        
