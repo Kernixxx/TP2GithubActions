@@ -1,5 +1,4 @@
-name: Deploy
-
+name : deploy
 on:
   workflow_dispatch:
     inputs:
@@ -11,6 +10,5 @@ jobs:
   deploy-env:
     runs-on: ubuntu-latest
     steps:
-      - name: Démarrage workflow
-      - run: echo "Démarrage du workflow"
-
+      - name: Démarrage deploiement
+        run: echo "Démarrage du workflow"
