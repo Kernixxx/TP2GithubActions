@@ -25,10 +25,16 @@ jobs:
         if: ${{ github.event.inputs.server == 'prod' }} 
 
       - name: qual
-        run: echo "Environnement de qualification choisi"
+        run: |
+          echo "Environnement de qualification choisi"
+          exit 1
         if: ${{ github.event.inputs.server == 'qual' }} 
 
       - name: dev
         run: echo "Environnement de développement choisi"
         if: ${{ github.event.inputs.server == 'dev' }} 
+
+      - name : Fin de workflow 
+        run: echo "Fin de workflow"
+
        
