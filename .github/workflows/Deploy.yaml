@@ -1,4 +1,5 @@
-name : deploy
+name: deploy
+
 on:
   workflow_dispatch:
     inputs:
@@ -6,9 +7,12 @@ on:
         description: 'Environnement de déploiement'
         required: true
         default: 'dev'
+
 jobs:
   deploy-env:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Démarrage deploiement
+      - name: Démarrage déploiement
         run: echo "Démarrage du workflow"
+        if: ${{ github.ref == 'refs/heads/main' }}
