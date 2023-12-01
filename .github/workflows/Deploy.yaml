@@ -1,0 +1,16 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      server:
+        description: 'Environnement de déploiement'
+        required: true
+        default: 'dev'
+jobs:
+  deploy-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Démarrage workflow
+      - run: echo "Démarrage du workflow"
+
