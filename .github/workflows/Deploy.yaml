@@ -17,8 +17,8 @@ jobs:
         run: echo "Démarrage du workflow sur ${{ github.ref }}"
         
       - name: Récupération code
-        if: ${{ github.ref == 'refs/heads/main' }} 
         uses: actions/checkout@v4.1.1
+        if: ${{ github.ref == 'refs/heads/main' }}
 
       - name: prod
         run: echo "Environnement de production choisi"
@@ -36,5 +36,6 @@ jobs:
 
       - name : Fin de workflow 
         run: echo "Fin de workflow"
+        if: always() 
 
        
