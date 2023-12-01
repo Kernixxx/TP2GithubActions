@@ -17,5 +17,6 @@ jobs:
         run: echo "Démarrage du workflow sur ${{ github.ref }}"
         
       - name: Récupération code
-        run: echo "Récupération code"
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/main' }} 
+        uses: actions/checkout@v4.1.1
+       
